@@ -1,0 +1,23 @@
+{
+  "name": "@remotebear/data-api",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "create-company": "node scripts/create-company",
+    "update-company-metadata": "node scripts/update-company-metadata",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix"
+  },
+  "dependencies": {
+    "@remotebear/data": "*",
+    "dotenv": "^8.2.0",
+    "chalks": "^0.1.5",
+    "node-fetch": "^2.6.1",
+    "ora": "^5.4.0",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

@@ -1,0 +1,8 @@
+[
+  { "id": "global", "label": "Anywhere" },
+  { "id": "us", "label": "U.S." },
+  { "id": "eu", "label": "Europe" },
+  { "id": "canada", "label": "Canada" },
+  { "id": "australia", "label": "Australia" },
+  { "id": "other", "label": "Other" }
+]

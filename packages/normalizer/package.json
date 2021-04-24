@@ -1,0 +1,24 @@
+{
+  "name": "@remotebear/normalizer",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "check-normalizations": "node scripts/check-normalizations",
+    "check-normalizations:watch": "nodemon node scripts/check-normalizations",
+    "print-locations-for-test-file": "node scripts/print-locations-for-test-file",
+    "lint": "eslint src",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest src",
+    "test:watch": "npm run test -- --watch"
+  },
+  "dependencies": {
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@remotebear/data-api": "*",
+    "chalks": "^0.1.5",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  }
+}

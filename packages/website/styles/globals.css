@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Source Serif Pro";
+  src: url("/fonts/SourceSerifPro-Bold.min.3c9ad0e69f.woff2") format("woff2"),
+    url("/fonts/SourceSerifPro-Bold.min.7c14569d7b.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  src: url("/fonts/SourceSerifPro-SemiBold.min.0c030c830a.woff2")
+      format("woff2"),
+    url("/fonts/SourceSerifPro-SemiBold.min.77399d4983.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}

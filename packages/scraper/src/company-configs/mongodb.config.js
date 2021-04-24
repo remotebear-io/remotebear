@@ -1,0 +1,21 @@
+const { locationIds } = require("@remotebear/data-api");
+const { locationLooselyIncludes } = require("@remotebear/normalizer");
+
+function getNormalizedLocation({ location }) {
+  const normalizedLocation = [];
+  if (locationLooselyIncludes(location, ["remote north america"])) {
+    normalizedLocation.push(locationIds.us);
+  }
+  if (locationLooselyIncludes(location, "remote europe")) {
+    normalizedLocation.push(locationIds.eu);
+  }
+  if (locationLooselyIncludes(location, ["remote emea"])) {
+    normalizedLocation.push(locationIds.eu);
+    normalizedLocation.push(locationIds.other);
+  }
+  return normalizedLocation;
+}
+
+module.exports = {
+  getNormalizedLocation,
+};

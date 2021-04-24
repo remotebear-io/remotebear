@@ -1,0 +1,12 @@
+# https://github.com/palantir/bulldozer
+
+version: 1
+
+merge:
+  method: squash
+  delete_after_merge: true
+  trigger:
+    comment_substrings: ["Auto-update"]
+update:
+  trigger:
+    comment_substrings: ["Auto-update"]

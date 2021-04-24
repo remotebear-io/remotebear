@@ -1,0 +1,17 @@
+{
+  "name": "@remotebear/data",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest",
+    "test:watch": "yarn jest --watch"
+  },
+  "dependencies": {
+    "joi": "^17.3.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

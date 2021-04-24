@@ -1,0 +1,19 @@
+name: "Scrape jobs every 6 hours"
+
+on:
+  schedule:
+  - cron: "0 */6 * * *"
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    name: "Run scraping on Heroku"
+    steps:
+      - name: Heroku Run
+        uses: michcio1234/heroku-run@0.1.1
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          command: "yarn scrape --read-local-data"
+
