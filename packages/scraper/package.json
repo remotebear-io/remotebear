@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "yarn scrape",
-    "scrape": "node scripts/scrape-jobs",
+    "scrape": "node scripts/scrape",
     "lint": "eslint src",
     "lint:fix": "yarn lint --fix",
     "test": "jest src",
