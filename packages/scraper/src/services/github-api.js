@@ -94,20 +94,8 @@ function buildPullRequestBody({
   return body;
 }
 
-async function getJobsData() {
-  const jobsDataResult = await octokit.repos.getContent({
-    owner: GITHUB_OWNER,
-    repo: GITHUB_REPO,
-    path: jobsFilePath,
-  });
-  const jobsData = JSON.parse(
-    Buffer.from(jobsDataResult.data.content, "base64").toString()
-  );
-  return jobsData;
-}
-
 async function createNewJobsDataPullRequest({
-  jobsData,
+  jobs,
   addedJobs,
   removedJobs,
   scrapingErrors,
@@ -116,7 +104,7 @@ async function createNewJobsDataPullRequest({
   const date = new Date();
   const formattedDate = toPrettyIsoDate(date);
   const files = {};
-  files[jobsFilePath] = JSON.stringify(jobsData);
+  files[jobsFilePath] = JSON.stringify(jobs);
   if (removedJobs.length) {
     const jobsHistoryPath = `${jobsHistoryDir}/jobs-history.${formattedDate}.json`;
     files[jobsHistoryPath] = JSON.stringify(removedJobs);
@@ -144,6 +132,5 @@ async function createNewJobsDataPullRequest({
 }
 
 module.exports = {
-  getJobsData,
   createNewJobsDataPullRequest,
 };
