@@ -26,7 +26,7 @@ function applyPostScrapingCustomizations(job) {
 function setNormalizedLocation(job) {
   return {
     ...job,
-    normalizedLocation: getNormalizedLocation(job),
+    normalizedLocation: getNormalizedLocation(job, companyConfigs),
   };
 }
 
