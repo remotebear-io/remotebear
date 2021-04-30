@@ -78,6 +78,14 @@ export function Footer() {
                     Twitter @remotebear_io
                   </Link>
                 </li>
+                <li className="mb-1">
+                  <Link
+                    href="https://github.com/remotebear-io"
+                    className="hover:underline"
+                  >
+                    Remotebear on GitHub
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

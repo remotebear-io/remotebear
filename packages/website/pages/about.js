@@ -54,6 +54,17 @@ export default function About() {
           (non-invasive) features.
           <br />
           <br />
+          We&apos;re developing Remotebear in the open:{" "}
+          <b>Remotebear&apos;s source code is open-source</b> and available on{" "}
+          <Link
+            href="https://github.com/remotebear-io/remotebear"
+            className="text-blue-600 font-medium hover:underline"
+          >
+            GitHub
+          </Link>
+          .
+          <br />
+          <br />
           If you&apos;re a company interested in collaborations, or if you wanna
           provide feedback and suggestions, please&nbsp;
           <GetInTouchButton />.
