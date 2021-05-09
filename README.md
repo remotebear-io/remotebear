@@ -12,25 +12,38 @@ Source code of [remotebear.io](https://remotebear.io).
 
 ## Technology & Architecture
 
-Remotebear is a NextJS web application that gathers job offers from public APIs or by scraping public websites using a Node script.
-The entire codebase and database is contained in this repo and is organized using [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
+Remotebear is a [NextJS](https://nextjs.org/) web application that gathers job offers from public APIs or by scraping public websites using a Node script.
+The entire codebase and "database" are contained in the repo [remotebear-io/remotebear repo](https://github.com/remotebear-io/remotebear) and is organized using [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
+
+
+![](/.github/flow.png)
 
 The way Remotebear collects remote jobs is the following:
 
-1. In this repo, under `packages/data/companies` we're storing a `companies-data.json` file, which keeps track of what companies we're interested in. It holds information about the company name, URL, description, and about how its remote positions should be collected (AKA from which job board, like [Greenhouse](https://www.greenhouse.io/), [Lever](https://www.lever.co/), etc...).
-2. Every `n` hours, we run a Node script (`packages/scraper`) on Heroku that, given `companies-data.json`, collects each company remote job, normalizes it (e.g.: normalizes the location and department using `packages/normalizer`), and submits a pull request to the repo itself with the goal of saving the collected remote jobs in `packages/data/jobs/jobs-data.json`.
+1. In the repo I'm storing a `companies-data.json` file, which keeps track of what companies we're interested in. It holds information about the company name, URL, description, and about how their remote positions should be collected (AKA from which job board, like [Greenhouse](https://www.greenhouse.io/), [Lever](https://www.lever.co/), etc...).
+2. Every `n` hours, I run a Node script on Heroku that, given `companies-data.json`, collects each company remote job, normalizes it (e.g.: normalize locations like "Remote - New York only" into more scoped "us", "eu", "global" buckets), and submits a pull request to the repo with the goal of saving the collected remote jobs in a JSON file called `jobs-data.json`.
 3. If the pull request tests pass, [Bulldozer](https://github.com/palantir/bulldozer) automatically merges it.
 
-Remotebear's website (`packages/website`) is built using NextJS, hosted on Vercel, and uses SSR to grab the jobs/companies data from distributed serverless functions that expose `jobs-data.json` and `company-data.json` (they just read them once loaded and keep them in memory). For jobs and companies data, we set a long caching window at the edge — but we never show stale data because every time the pull request above is merged, Vercel starts a new build, invalidating the entire cache. Immutable assets (e.g.: fonts, images, etc...) are cached on the browser.
+Here's how a pull request looks like:
+
+
+![](/.github/pull-request.png)
+
+__All the static data that populates Remotebear lives in the repo as huge JSON objects__.  
+Why? Because this pattern is working well enough for our current use case.    
+Does it scale well? No.  
+Are we planning to scale? Who knows.  
+
+Remotebear's website is built with NextJS, is hosted on [Vercel](http://vercel.com/), and uses SSR to grab the jobs/companies data from distributed serverless functions that expose `jobs-data.json` and `company-data.json` (they just read them once loaded and keep them in memory).  
+For jobs and companies data, we set a long caching window at the edge — but we never show stale data because every time the pull request with updated jobs is merged, Vercel starts a new build, invalidating the entire cache.  
+Immutable assets (e.g.: fonts, images, etc...) are also cached on the browser.  
+Basically, the way we store and use data on the front-end is a mixture between [State Site Generation](https://jamstack.org/generators/) and Server Side Rendering; we're not going all-in with a Static Site Generation approach because pagination, search, and filtering, would still require some kind of Server Side Rendering to generate the pages on-demand. 
 
 ## Repo structure
 
 ### `packages/data`
 
-All the static data that populates Remotebear lives in this package as JSON objects — yes, we are basically keeping the database in the repo 🍉.
-Why? Because this pattern is working well enough for our current use case.  
-Does it scale well? No.
-Are we planning to scale? Who knows.
+All the static data that populates Remotebear lives in this package as JSON objects.  
 
 In this package you can find:
 

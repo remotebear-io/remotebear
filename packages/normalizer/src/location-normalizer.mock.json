@@ -265,6 +265,9 @@
   ["launchdarkly", ["us"], "Remote - US"],
   ["launchdarkly", ["us"], "Remote - US Central"],
 
+  ["linear", ["eu", "us"], "Remote US/EU Timezones"],
+  ["linear", ["us"], "Remote US Timezones"],
+
   ["loom", ["global"], "San Francisco or Remote"],
   ["loom", ["us"], "Remote (EST Time Zone)"],
 
