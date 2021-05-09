@@ -43,6 +43,7 @@
   { "locationIds": ["us", "eu"], "type": "match", "pattern": "hq san francisco, north america remote, south america remote, europe remote" },
   { "locationIds": ["us", "eu"], "type": "match", "pattern": "san francisco hq, north america remote, south america remote, europe remote" },
   { "locationIds": ["us", "eu"], "type": "match", "pattern": "San Francisco, London, remote" },
+  { "locationIds": ["us", "eu"], "type": "match", "pattern": "remote us/eu timezones" },
 
   { "locationIds": ["us"], "type": "keywords", "pattern": "remote america" },
   { "locationIds": ["us"], "type": "keywords", "pattern": "remote americas" },
@@ -145,6 +146,7 @@
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote france germany united kingdom" },
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote germany berlin uk" },
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote trier germany" },
+  { "locationIds": ["us"], "type": "match", "pattern": "remote eu timezones" },
   { "locationIds": ["eu"], "type": "match", "pattern": "remote, denmark, norway, sweden, finland, iceland" },
   { "locationIds": ["eu"], "type": "match", "pattern": "london or remote (united kingdom)" },
   { "locationIds": ["eu"], "type": "match", "pattern": "uk (remote), germany (remote), netherlands (remote)" },
