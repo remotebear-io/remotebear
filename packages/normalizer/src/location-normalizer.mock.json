@@ -211,6 +211,10 @@
   ["gitlab", ["us"], "Remote, North America"],
   ["gitlab", ["us"], "Remote, United States"],
 
+  ["gremlin", ["global"], "Remote"],
+  ["gremlin", ["us"], "Remote within US"],
+  ["gremlin", ["us"], "Remote - within US"],
+
   ["gusto", ["us"], "Remote, Denver, San Francisco"],
   ["gusto", ["us"], "San Francisco, Denver, Remote"],
   ["gusto", ["us"], "Denver, New York City, Remote, San Francisco"],
