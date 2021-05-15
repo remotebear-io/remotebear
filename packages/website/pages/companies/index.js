@@ -1,17 +1,17 @@
 import Head from "components/head";
 import Layout from "components/layout";
 import { CompaniesHeadline } from "components/headline";
-import { fetchApi } from "lib/utils";
 import CompanyListItem from "components/company-list-item";
+import { getCompanies } from "pages/api/companies";
 
 const monthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
 
 export async function getStaticProps() {
-  const data = await fetchApi(`/api/companies`);
-  const recentlyAddedCompanies = data.items
+  const allCompanies = getCompanies();
+  const recentlyAddedCompanies = allCompanies
     .filter((company) => company.createdAt + monthInMilliseconds > Date.now())
     .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-  const otherCompanies = data.items
+  const otherCompanies = allCompanies
     .sort((a, b) => (a.name > b.name ? 1 : -1))
     .filter(
       (company) => !recentlyAddedCompanies.find((x) => x.id === company.id)
