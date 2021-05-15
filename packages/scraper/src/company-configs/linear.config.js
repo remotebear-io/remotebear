@@ -3,7 +3,8 @@ function extractTitle(job) {
 }
 function extractLocation(job) {
   const regexp = /\(([^)]+)\)/;
-  return regexp.exec(job.title)[1].trim();
+  const result = regexp.exec(job.title);
+  return result ? result[1].trim() : "Remote";
 }
 
 // Linear keeps the location info in the job title.
