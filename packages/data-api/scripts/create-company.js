@@ -34,6 +34,6 @@ createCompany({
   id,
   name,
   url,
-  scrapingStrategy,
+  scrapingStrategy: { id: scrapingStrategy },
   crunchbaseConfig: { id: crunchbaseId },
 });
