@@ -71,6 +71,13 @@
   ["calm", ["global"], "Remote"],
   ["calm", ["us"], "Remote in the USA"],
 
+  ["canonical", [], "Remote - Shenzhen, China"],
+  ["canonical", ["australia", "other"], "Remote - APAC"],
+  ["canonical", ["eu", "other"], "Remote - EMEA"],
+  ["canonical", ["eu", "other", "us"], "Remote - Americas, EMEA"],
+  ["canonical", ["global"], "Remote - Worldwide"],
+  ["canonical", ["us"], "Remote - Americas"],
+
   ["circleci", ["canada", "eu", "us"], "Remote (United States, Canada, United Kingdom, Ireland, or Germany)"],
   ["circleci", ["canada", "eu", "us", "other"], "Remote (United States, Canada, Germany, Ireland, Japan or United Kingdom)"],
   ["circleci", ["canada", "eu", "us"], "Remote (Ireland, United Kingdom, Germany, United States or Canada)"],
