@@ -7,7 +7,6 @@ import {
   JobListSeparatorSkeleton,
 } from "components/job-list-item";
 import { areArrayEqualsByKey, buildJobsApiUrl, isServerSide } from "lib/utils";
-import { useInfiniteScroll } from "lib/hooks";
 import { Button, GetInTouchButton } from "./buttons";
 import Pagination from "./pagination";
 import { useSWRInfinite } from "swr";
@@ -122,12 +121,12 @@ export function useJobs({
 }
 
 function JobList({ jobs, pagination, loadNextPage, loading, loadingNextPage }) {
-  const { loaderRef } = useInfiniteScroll({
-    currentPage: pagination?.currentPage,
-    enabled: infiniteScrollEnabled && pagination?.nextPage,
-    distance: 500,
-    onEndReached: loadNextPage,
-  });
+  // const { loaderRef } = useInfiniteScroll({
+  //   currentPage: pagination?.currentPage,
+  //   enabled: infiniteScrollEnabled && pagination?.nextPage,
+  //   distance: 500,
+  //   onEndReached: loadNextPage,
+  // });
   if (!jobs.length) {
     return <EmptyList />;
   }
@@ -165,14 +164,14 @@ function JobList({ jobs, pagination, loadNextPage, loading, loadingNextPage }) {
         );
       })}
       <noscript>
-        <Pagination pagination={pagination} />
+        {pagination && <Pagination pagination={pagination} />}
       </noscript>
       <div className="js-only">
         <Footer
           pagination={pagination}
           loadNextPage={loadNextPage}
           loadingNextPage={loadingNextPage}
-          loaderRef={loaderRef}
+          // loaderRef={loaderRef}
         />
       </div>
     </>

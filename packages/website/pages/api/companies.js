@@ -22,9 +22,8 @@ function parseNumberOfEmployesEnum(numberOfEmployesEnum) {
   return [Number(lowerBound), Number(upperBound)];
 }
 
-export default (req, res) => {
-  const companyId = sanitizeString(req.query?.cid || "");
-  const items = allCompanies
+export function getCompanies(companyId) {
+  const companies = allCompanies
     .filter((company) => (companyId ? company.id === companyId : true))
     .filter((company) => company.status === "enabled")
     .map((company) => {
@@ -36,7 +35,7 @@ export default (req, res) => {
         url: company.url,
         description: company.crunchbaseMeta?.description,
         jobsCount: jobsCountByCompanyId[company.id],
-        createdAt: company.createdAt,
+        createdAt: company.createdAt || null,
         logoUrl,
       };
       if (companyId) {
@@ -46,6 +45,12 @@ export default (req, res) => {
       }
       return data;
     });
+  return companyId ? companies?.[0] : companies;
+}
+
+export default (req, res) => {
+  const companyId = sanitizeString(req.query?.cid || "");
+  const items = getCompanies(companyId);
   res.statusCode = 200;
   res.setHeader(
     "Cache-Control",

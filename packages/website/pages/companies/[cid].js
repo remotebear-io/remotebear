@@ -2,16 +2,18 @@ import Head from "components/head";
 import Layout from "components/layout";
 import { Headline } from "components/headline";
 import { Underline } from "components/underline";
-import { fetchApi, prettifyUrl } from "lib/utils";
+import { prettifyUrl } from "lib/utils";
 import Link from "components/link";
-import { useJobs, MemoizedJobList } from "components/job-list";
+import { MemoizedJobList } from "components/job-list";
 import { GetInTouchButton } from "components/buttons";
 import { Banner } from "components/banner";
 import Image from "next/image";
+import { getCompanies } from "pages/api/companies";
+import { getJobs } from "pages/api/jobs";
 
 export async function getStaticPaths() {
-  const data = await fetchApi(`/api/companies`);
-  const companyIds = data.items.map((company) => company.id);
+  const allCompanies = getCompanies();
+  const companyIds = allCompanies.map((company) => company.id);
   const paths = companyIds.map((cid) => ({ params: { cid } }));
   return {
     paths,
@@ -20,35 +22,21 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const companies = await fetchApi(`/api/companies?cid=${params.cid}`);
-  const company = companies?.items?.[0];
+  const company = getCompanies(params.cid);
   if (!company?.id) {
     return { notFound: true };
   }
-  const jobs = await fetchApi(`/api/jobs?cid=${params.cid}`);
+  const jobs = getJobs({ companyId: company.id });
 
   return {
     props: {
-      initialData: {
-        company,
-        jobs,
-      },
+      company,
+      jobs,
     },
   };
 }
 
-export default function Companies({ initialData }) {
-  const { company } = initialData;
-  const {
-    jobs,
-    pagination,
-    isLoadingSlowly,
-    isLoadingNextPageSlowly,
-    loadNextPage,
-  } = useJobs({
-    companyId: company.id,
-    initialData: initialData.jobs,
-  });
+export default function Companies({ company, jobs }) {
   return (
     <Layout>
       <Head
@@ -138,13 +126,7 @@ export default function Companies({ initialData }) {
         </span>
       </Banner>
       {jobs?.length > 0 ? (
-        <MemoizedJobList
-          jobs={jobs}
-          pagination={pagination}
-          loadNextPage={loadNextPage}
-          loading={isLoadingSlowly}
-          loadingNextPage={isLoadingNextPageSlowly}
-        />
+        <MemoizedJobList jobs={jobs} />
       ) : (
         <>
           <div className="flex flex-col w-full items-center mt-28 mb-24">
