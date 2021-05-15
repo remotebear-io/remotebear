@@ -9,6 +9,8 @@
     "update-company-metadata": "cd packages/data-api && yarn update-company-metadata",
     "check-normalizations": "cd packages/normalizer && yarn check-normalizations",
     "print-locations-for-test-file": "cd packages/normalizer && yarn print-locations-for-test-file",
+    "refresh-icon-hashes": "cd packages/website && scripts/icon-hashes.js refresh",
+    "generate-icons": "cd packages/website && scripts/icon-generator.js",
     "lint": "ultra -r lint",
     "lint:fix": "ultra -r lint:fix",
     "test": "ultra -r test"

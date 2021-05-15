@@ -65,7 +65,7 @@ async function updateCompany(companyId, company) {
   existingCompany.crunchbaseConfig =
     company.crunchbaseConfig || existingCompany.crunchbaseConfig;
   existingCompany.scrapingConfig =
-    company.scrapingConfig || existingCompany.name;
+    company.scrapingConfig || existingCompany.scrapingConfig;
   existingCompany.scrapingStrategy =
     company.scrapingStrategy || existingCompany.scrapingStrategy;
   existingCompany.status = company.status || existingCompany.status;

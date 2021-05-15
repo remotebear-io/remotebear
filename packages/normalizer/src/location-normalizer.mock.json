@@ -78,6 +78,9 @@
   ["canonical", ["global"], "Remote - Worldwide"],
   ["canonical", ["us"], "Remote - Americas"],
 
+  ["cloudflare", ["global"], "Remote"],
+  ["cloudflare", ["us"], "Remote US"],
+
   ["circleci", ["canada", "eu", "us"], "Remote (United States, Canada, United Kingdom, Ireland, or Germany)"],
   ["circleci", ["canada", "eu", "us", "other"], "Remote (United States, Canada, Germany, Ireland, Japan or United Kingdom)"],
   ["circleci", ["canada", "eu", "us"], "Remote (Ireland, United Kingdom, Germany, United States or Canada)"],
