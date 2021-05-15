@@ -9,20 +9,23 @@ import { GetInTouchButton } from "components/buttons";
 import { Banner } from "components/banner";
 import Image from "next/image";
 
-const yearInSeconds = 60 * 60 * 24 * 365;
+export async function getStaticPaths() {
+  const data = await fetchApi(`/api/companies`);
+  const companyIds = data.items.map((company) => company.id);
+  const paths = companyIds.map((cid) => ({ params: { cid } }));
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
-export async function getServerSideProps({ res, params }) {
+export async function getStaticProps({ params }) {
   const companies = await fetchApi(`/api/companies?cid=${params.cid}`);
   const company = companies?.items?.[0];
   if (!company?.id) {
     return { notFound: true };
   }
   const jobs = await fetchApi(`/api/jobs?cid=${params.cid}`);
-
-  res.setHeader(
-    "Cache-Control",
-    `s-maxage=${yearInSeconds}, stale-while-revalidate`
-  );
 
   return {
     props: {
