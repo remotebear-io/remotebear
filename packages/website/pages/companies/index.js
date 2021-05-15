@@ -4,15 +4,10 @@ import { CompaniesHeadline } from "components/headline";
 import { fetchApi } from "lib/utils";
 import CompanyListItem from "components/company-list-item";
 
-const yearInSeconds = 60 * 60 * 24 * 365;
 const monthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
 
-export async function getServerSideProps({ res }) {
+export async function getStaticProps() {
   const data = await fetchApi(`/api/companies`);
-  res.setHeader(
-    "Cache-Control",
-    `s-maxage=${yearInSeconds}, stale-while-revalidate`
-  );
   const recentlyAddedCompanies = data.items
     .filter((company) => company.createdAt + monthInMilliseconds > Date.now())
     .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
