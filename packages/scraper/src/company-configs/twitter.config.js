@@ -77,7 +77,7 @@ function getNormalizedLocation({ location }) {
   if (locationLooselyIncludes(location, "remote australia")) {
     normalizedLocation.push(locationIds.australia);
   }
-  if (locationLooselyIncludes(location, "remote japan")) {
+  if (locationLooselyIncludes(location, ["remote japan", "ghana remote"])) {
     normalizedLocation.push(locationIds.other);
   }
   if (locationLooselyIncludes(location, "remote singapore")) {

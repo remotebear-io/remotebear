@@ -12,6 +12,7 @@
 
   { "locationIds": ["eu", "other"], "type": "keywords", "pattern": "remote emea" },
   { "locationIds": ["eu", "other", "us"], "type": "match", "pattern": "remote us or emea" },
+  { "locationIds": ["eu", "other", "us"], "type": "match", "pattern": "north america or emea" },
   { "locationIds": ["eu", "other", "us"], "type": "match", "pattern": "remote emea or americas" },
   { "locationIds": ["eu", "other", "us"], "type": "match", "pattern": "remote emea or us" },
   { "locationIds": ["eu", "other", "us"], "type": "match", "pattern": "remote amer or emea" },
@@ -100,6 +101,9 @@
   { "locationIds": ["us"], "type": "match", "pattern": "New York City or Remote North America" },
   { "locationIds": ["us"], "type": "match", "pattern": "Portland, OR; San Francisco, CA; US West (Remote)" },
   { "locationIds": ["us"], "type": "match", "pattern": "Cambridge, New York City, Sunnyvale, San Francisco, Remote US" },
+  { "locationIds": ["us"], "type": "match", "pattern": "denver co usa remote only" },
+  { "locationIds": ["us"], "type": "match", "pattern": "boston ma usa remote only" },
+  { "locationIds": ["us"], "type": "match", "pattern": "remote us washington dc" },
   { "locationIds": ["us"], "type": "match", "pattern": "remote san francisco/san mateo" },
   { "locationIds": ["us"], "type": "match", "pattern": "washinton dc usa remote only" },
   { "locationIds": ["us"], "type": "match", "pattern": "remote san mateo ca" },
@@ -164,6 +168,7 @@
   { "locationIds": ["eu"], "type": "match", "pattern": "london or remote (united kingdom, ireland, germany)" },
 
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote canada" },
+  { "locationIds": ["canada"], "type": "keywords", "pattern": "toronto on canada" },
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote toronto canada" },
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote canada ottawa" },
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote canada montral" },
@@ -202,5 +207,6 @@
   { "locationIds": ["other"], "type": "keywords", "pattern": "israel remote" },
   { "locationIds": ["other"], "type": "keywords", "pattern": "taiwan remote" },
   { "locationIds": ["other"], "type": "keywords", "pattern": "mexico city remote mexico" },
-  { "locationIds": ["other"], "type": "keywords", "pattern": "seoul korea remote only" }
+  { "locationIds": ["other"], "type": "keywords", "pattern": "seoul korea remote only" },
+  { "locationIds": ["other"], "type": "keywords", "pattern": "remote north or south korea" }
 ]
