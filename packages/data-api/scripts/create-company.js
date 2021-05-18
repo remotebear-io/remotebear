@@ -2,7 +2,7 @@ const { createCompany } = require("@remotebear/data-api");
 const { hideBin } = require("yargs/helpers");
 const yargs = require("yargs");
 
-const { id, name, url, scrapingStrategy, crunchbaseId } = yargs(
+const { id, name, url, scrapingStrategy, scrapingId, crunchbaseId } = yargs(
   hideBin(process.argv)
 )
   .option("id", {
@@ -25,6 +25,10 @@ const { id, name, url, scrapingStrategy, crunchbaseId } = yargs(
     description: "Scraping strategy",
     demandOption: true,
   })
+  .option("scraping-id", {
+    type: "string",
+    description: "Scraping ID (defaults to company ID)",
+  })
   .option("crunchbase-id", {
     type: "string",
     description: "Crunchbase ID (defaults to company ID)",
@@ -35,5 +39,6 @@ createCompany({
   name,
   url,
   scrapingStrategy: scrapingStrategy,
-  crunchbaseConfig: { id: crunchbaseId },
+  scrapingConfig: scrapingId ? { id: scrapingId } : undefined,
+  crunchbaseConfig: crunchbaseId ? { id: crunchbaseId } : undefined,
 });
