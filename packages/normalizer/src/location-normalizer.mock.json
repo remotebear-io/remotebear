@@ -182,6 +182,14 @@
   ["figma", ["us"], "New York or Remote US"],
   ["figma", ["us"], "San Francisco or New York or Remote US"],
 
+  ["fullstory", ["canada", "us"], "Remote (USA or Canada)"],
+  ["fullstory", ["canada", "us"], "Atlanta, GA or Remote (USA or Canada)"],
+  ["fullstory", ["us"], "Atlanta or Remote"],
+  ["fullstory", ["us"], "Remote, San Francisco Bay Area"],
+  ["fullstory", ["us"], "Atlanta, GA or Remote"],
+  ["fullstory", ["us"], "Remote (USA - Pacific or Mountain Time Zones)"],
+  ["fullstory", ["us"], "Remote"],
+
   ["github", ["australia"], "Remote - Canberra, Australia"],
   ["github", ["australia"], "Remote - Sydney, Australia"],
   ["github", ["canada"], "Remote - Toronto, Canada"],
