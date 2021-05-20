@@ -30,6 +30,7 @@ export function getJobs({ query, locationId, departmentId, companyId }) {
   return allJobs
     .filter((job) => {
       const company = allCompaniesById[job.companyId];
+      const disabled = job?.status === "disabled";
       let satisfiesQuery = true;
       if (query) {
         satisfiesQuery =
@@ -60,7 +61,8 @@ export function getJobs({ query, locationId, departmentId, companyId }) {
         satisfiesQuery &&
         satisfiesLocationId &&
         satisfiesDepartmentId &&
-        satisfiesCompanyId
+        satisfiesCompanyId &&
+        !disabled
       );
     })
     .map((job) => {

@@ -23,6 +23,7 @@ const schema = Joi.array().items(
     ),
     title: Joi.string().required(),
     createdAt: Joi.date().timestamp().required(),
+    status: Joi.string().optional().valid("disabled"),
     _id: Joi.any(),
     _updatedAt: Joi.any(),
   })
