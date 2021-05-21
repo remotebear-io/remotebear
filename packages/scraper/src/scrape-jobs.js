@@ -65,7 +65,11 @@ function isValidJob(job) {
 }
 
 function isRemote(job) {
-  return job.location && job.location.toLowerCase().includes("remote");
+  return (
+    job.location &&
+    (job.location.toLowerCase().includes("remote") ||
+      job.location.toLowerCase() === "anywhere")
+  );
 }
 
 function sanitizeJob(job) {

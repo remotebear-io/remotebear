@@ -1,6 +1,7 @@
 [
   { "locationIds": ["global"], "type": "match", "pattern": "remote" },
   { "locationIds": ["global"], "type": "match", "pattern": "remote global" },
+  { "locationIds": ["global"], "type": "match", "pattern": "anywhere" },
   { "locationIds": ["global"], "type": "match", "pattern": "full remote" },
   { "locationIds": ["global"], "type": "match", "pattern": "fullremote" },
   { "locationIds": ["global"], "type": "match", "pattern": "remote anywhere" },
