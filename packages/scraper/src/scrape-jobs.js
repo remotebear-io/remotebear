@@ -23,10 +23,18 @@ function applyPostScrapingCustomizations(job) {
   return job;
 }
 
+// Deduplicate jobs that:
+// - have the same ID
+// - have the same location + title + creation date
 function dedupe(job, index, jobs) {
   return (
     jobs.findIndex(
-      (j) => j._id === job._id && j.companyId === job.companyId
+      (j) =>
+        (j.id === job.id ||
+          (j.title === job.title &&
+            j.location === job.location &&
+            j.createdAt === job.createdAt)) &&
+        j.companyId === job.companyId
     ) === index
   );
 }
