@@ -23,6 +23,14 @@ function applyPostScrapingCustomizations(job) {
   return job;
 }
 
+function dedupe(job, index, jobs) {
+  return (
+    jobs.findIndex(
+      (j) => j._id === job._id && j.companyId === job.companyId
+    ) === index
+  );
+}
+
 function setNormalizedLocation(job) {
   return {
     ...job,
@@ -127,6 +135,7 @@ async function scrapeJobs({
   const scrapedJobs = (await Promise.all(companyJobRunnerPromises))
     .flat()
     .map(applyPostScrapingCustomizations)
+    .filter(dedupe)
     .filter(isRemote)
     .filter((job) => {
       if (!isValidJob(job)) {
