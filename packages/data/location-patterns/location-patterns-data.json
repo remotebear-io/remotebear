@@ -139,6 +139,7 @@
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote spain" },
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote italy" },
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote argentina" },
+  { "locationIds": ["eu"], "type": "keywords", "pattern": "remote london" },
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote poland" },
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote dublin" },
   { "locationIds": ["eu"], "type": "keywords", "pattern": "remote dublin ireland" },
