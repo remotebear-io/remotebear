@@ -108,6 +108,13 @@
 
   ["codesandbox", ["global"], "Remote"],
 
+  ["coinbase", ["canada"], "Remote - Canada"],
+  ["coinbase", ["eu"], "Remote - UK"],
+  ["coinbase", ["eu"], "Remote - Ireland"],
+  ["coinbase", ["other"], "Remote - Singapore"],
+  ["coinbase", ["other"], "Remote - India"],
+  ["coinbase", ["us"], "Remote - USA"],
+
   ["coursera", ["canada"], "Toronto, Remote"],
   ["coursera", ["canada", "us"], "Remote, USA, Canada"],
   ["coursera", ["eu"], "Remote, Germany"],
@@ -390,6 +397,14 @@
   ["snyk", ["global"], "US (West Coast), or Remote"],
   ["snyk", ["global"], "Austin, or Remote"],
   ["snyk", ["global"], "London, Ottawa, Boston, or Remote"],
+
+  ["sourcegraph", [], "Remote - Singapore, Melbourne or Sydney"],
+  ["sourcegraph", [], "Remote - London"],
+  ["sourcegraph", ["eu", "other"], "Remote - EMEA"],
+  ["sourcegraph", ["global"], "Remote"],
+  ["sourcegraph", ["other"], "Remote - Singapore"],
+  ["sourcegraph", ["us"], "Remote - US West"],
+  ["sourcegraph", ["us"], "Remote - US"],
 
   ["stripe", ["canada", "us"], "US / Canada, Remote"],
   ["stripe", ["canada", "us"], "Remote, US / Canada"],
