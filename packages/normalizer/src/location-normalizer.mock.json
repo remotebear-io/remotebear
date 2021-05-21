@@ -81,6 +81,11 @@
   ["cloudflare", ["global"], "Remote"],
   ["cloudflare", ["us"], "Remote US"],
 
+  ["close", ["eu", "us"], "Americas & European time zones -- 100% Remote, United States"],
+  ["close", ["us"], "100% Remote, Europe"],
+  ["close", ["us"], "Americas -100% remote, United States"],
+  ["close", ["us"], "100% Remote, United States"],
+
   ["circleci", ["canada", "eu", "us"], "Remote (United States, Canada, United Kingdom, Ireland, or Germany)"],
   ["circleci", ["canada", "eu", "us", "other"], "Remote (United States, Canada, Germany, Ireland, Japan or United Kingdom)"],
   ["circleci", ["canada", "eu", "us"], "Remote (Ireland, United Kingdom, Germany, United States or Canada)"],
@@ -501,6 +506,10 @@
   ["stripe", ["us"], "SEA, SF, CHI, NYC, Remote"],
   ["stripe", ["us"], "SF, SEA, Remote"],
   ["stripe", ["us"], "US - Seattle, SF, NYC, Remote"],
+
+  ["timescale", ["global"], "Anywhere"],
+  ["timescale", ["global"], "Remote"],
+  ["timescale", ["us"], "Fully remote (UTC-8 to UTC+5.5)"],
 
   ["twilio", ["global"], "Remote - Global"],
   ["twilio", ["us"], "Remote - US"],
