@@ -24,7 +24,7 @@ The way Remotebear collects remote jobs is the following:
 2. Every `n` hours, I run a Node script on Heroku that, given `companies-data.json`, collects each company remote job, normalizes it (e.g.: normalize locations like "Remote - New York only" into more scoped "us", "eu", "global" buckets), and submits a pull request to the repo with the goal of saving the collected remote jobs in a JSON file called `jobs-data.json`.
 3. If the pull request tests pass, [Bulldozer](https://github.com/palantir/bulldozer) automatically merges it.
 
-Here's how a pull request looks like:
+Here's a pull request example:
 
 
 ![](/.github/pull-request.png)
