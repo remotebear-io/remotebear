@@ -387,8 +387,13 @@
   ["shopify", ["us"], "Remote, Americas - East"],
   ["shopify", ["us"], "Remote, Americas"],
 
+  ["sourcegraph", [], "Remote - Singapore, Melbourne or Sydney"],
+  ["sourcegraph", ["eu"], "Remote - London"],
+  ["sourcegraph", ["eu", "other"], "Remote - EMEA"],
   ["sourcegraph", ["global"], "Remote"],
-  ["sourcegraph", ["global"], "Remote - Global"],
+  ["sourcegraph", ["other"], "Remote - Singapore"],
+  ["sourcegraph", ["us"], "Remote - US West"],
+  ["sourcegraph", ["us"], "Remote - US"],
 
   ["snyk", ["global"], "US (East Coast), US (West Coast), or Remote"],
   ["snyk", ["global"], "London, Boston, Tel Aviv, or Remote"],
