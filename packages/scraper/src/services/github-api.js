@@ -5,6 +5,7 @@ const {
   jobsFilePath,
   jobsHistoryDir,
 } = require("@remotebear/data-api");
+const prettier = require("prettier");
 const { GITHUB_API_TOKEN, GITHUB_OWNER, GITHUB_REPO } = require("../config");
 
 function toPrettyIsoDate(date) {
@@ -104,7 +105,10 @@ async function createNewJobsDataPullRequest({
   const date = new Date();
   const formattedDate = toPrettyIsoDate(date);
   const files = {};
-  files[jobsFilePath] = JSON.stringify(jobs);
+  files[jobsFilePath] = prettier.format(JSON.stringify(jobs), {
+    printWidth: 1000,
+    parser: "json",
+  });
   if (removedJobs.length) {
     const jobsHistoryPath = `${jobsHistoryDir}/jobs-history.${formattedDate}.json`;
     files[jobsHistoryPath] = JSON.stringify(removedJobs);

@@ -1,11 +1,15 @@
 const fs = require("fs");
 const path = require("path");
+const prettier = require("prettier");
 const jobsData = require("@remotebear/data/jobs/jobs-data.json");
 
 function writeJobs(jobs) {
   fs.writeFileSync(
     path.resolve(__dirname, "../../data/jobs/jobs-data.json"),
-    JSON.stringify(jobs)
+    prettier.format(JSON.stringify(jobs), {
+      printWidth: 1000,
+      parser: "json",
+    })
   );
 }
 
