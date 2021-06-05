@@ -46,6 +46,7 @@
   { "locationIds": ["us", "eu"], "type": "match", "pattern": "san francisco hq, north america remote, south america remote, europe remote" },
   { "locationIds": ["us", "eu"], "type": "match", "pattern": "San Francisco, London, remote" },
   { "locationIds": ["us", "eu"], "type": "match", "pattern": "remote us/eu timezones" },
+  { "locationIds": ["us", "eu"], "type": "match", "pattern": "usremote ukremote" },
 
   { "locationIds": ["us"], "type": "keywords", "pattern": "remote america" },
   { "locationIds": ["us"], "type": "keywords", "pattern": "remote americas" },
@@ -171,6 +172,7 @@
 
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote canada" },
   { "locationIds": ["canada"], "type": "keywords", "pattern": "toronto on canada" },
+  { "locationIds": ["canada"], "type": "keywords", "pattern": "toronto on remote" },
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote toronto canada" },
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote canada ottawa" },
   { "locationIds": ["canada"], "type": "keywords", "pattern": "remote canada montral" },
@@ -208,6 +210,7 @@
   { "locationIds": ["other"], "type": "keywords", "pattern": "brazil remote" },
   { "locationIds": ["other"], "type": "keywords", "pattern": "israel remote" },
   { "locationIds": ["other"], "type": "keywords", "pattern": "taiwan remote" },
+  { "locationIds": ["other"], "type": "keywords", "pattern": "new delhi india remote" },
   { "locationIds": ["other"], "type": "keywords", "pattern": "mexico city remote mexico" },
   { "locationIds": ["other"], "type": "keywords", "pattern": "seoul korea remote only" },
   { "locationIds": ["other"], "type": "keywords", "pattern": "remote north or south korea" }
