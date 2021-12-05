@@ -15,7 +15,10 @@ Source code of [remotebear.io](https://remotebear.io).
 Remotebear is a [NextJS](https://nextjs.org/) web application that gathers job offers from public APIs or by scraping public websites using a Node script.
 The entire codebase and "database" are contained in the repo [remotebear-io/remotebear repo](https://github.com/remotebear-io/remotebear) and is organized using [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
 
+__High-level arch:__
+![](/.github/high-level-arch.png)
 
+__Services overview:__
 ![](/.github/flow.png)
 
 The way Remotebear collects remote jobs is the following:
