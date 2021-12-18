@@ -71,7 +71,7 @@ Environment variables:
 
 ### `packages/normalizer`
 
-Logic used to normalize job departments and locations (especially locations).
+Logic used to normalize job departments and (especially!) locations.
 Our goal here is to normalize locations like "Remote - New York only" into more scoped buckets ("us", "eu", "global", etc...) in order to let users filter them.
 This is done is using a mixture of generic (`packages/data/location-patterns`) and company-specific rules/patterns.
 
