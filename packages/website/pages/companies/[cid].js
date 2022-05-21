@@ -76,6 +76,7 @@ export default function Companies({ company, jobs }) {
           />
         </svg>
         <Link
+          target="_blank"
           href={company.url}
           className="text-blue-600 font-medium hover:underline cursor-pointer"
         >
